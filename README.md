@@ -118,6 +118,9 @@ docs/       # Final report and presentation
 ### Prediction Distribution
 ![Distribution](results/prediction_distribution.png)
 
+### Training vs Validation Accuracy
+![Training](results/training_validation_accuracy.png)
+
 ---
 
 ## How to Run
