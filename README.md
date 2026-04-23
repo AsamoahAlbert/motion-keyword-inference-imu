@@ -131,8 +131,10 @@ docs/       # Final report and presentation
 
 python src/train_model.py
 
+---
+## Documentation
 
-
+- 📄 [Final Report](docs/final_report.pdf)
 
 ---
 ## Key Takeaway
