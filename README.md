@@ -1,18 +1,24 @@
 # Motion Sensor-Based Keyword Inference (IMU)
 
+> CNN-based system that infers spoken keywords from IMU vibration data and reveals IoT side-channel privacy risks.
+
+---
+
 ## Overview
 This project investigates whether vibration signals captured by motion sensors can be used to infer spoken keywords without directly accessing audio.
 
 An ADXL345 accelerometer is used to capture vibration data generated during audio playback. A 1D Convolutional Neural Network (CNN) is trained to classify these vibration signals into predefined keyword categories.
 
-This work explores both **machine learning performance** and **security implications**, particularly the risk of motion sensors acting as unintended side channels in IoT systems.
+## Key Takeaway
+This work demonstrates that motion sensors can act as **unintended side channels**, potentially leaking speech-related information.  
+While the approach is feasible under controlled conditions, it highlights **significant generalization challenges** and **privacy risks in IoT systems**.
 
 ---
 
 ## Objectives
-- Evaluate feasibility of vibration-based keyword inference
-- Compare performance in controlled vs real-world environments
-- Analyze privacy risks from sensor-based side-channel leakage
+- Evaluate feasibility of vibration-based keyword inference  
+- Compare performance in controlled vs real-world environments  
+- Analyze privacy risks from sensor-based side-channel leakage  
 
 ---
 
@@ -26,44 +32,44 @@ This work explores both **machine learning performance** and **security implicat
 ---
 
 ## Dataset
-- ~13,000 labeled IMU samples (structured dataset)
-- 100 real-world samples collected using Raspberry Pi + ADXL345
-- Sampling rate: 200 Hz
-- Input format: 3-axis accelerometer data (x, y, z)
+- ~13,000 labeled IMU samples (structured dataset)  
+- 100 real-world samples collected using Raspberry Pi + ADXL345  
+- Sampling rate: 200 Hz  
+- Input format: 3-axis accelerometer data (x, y, z)  
 
 ---
 
 ## Model
-- 1D Convolutional Neural Network (CNN)
-- Activation: ReLU
-- Regularization: BatchNorm + Dropout
-- Loss: Cross-Entropy
-- Optimizer: AdamW
-- Batch size: 64
-- Epochs: 30
+- 1D Convolutional Neural Network (CNN)  
+- Activation: ReLU  
+- Regularization: BatchNorm + Dropout  
+- Loss: Cross-Entropy  
+- Optimizer: AdamW  
+- Batch size: 64  
+- Epochs: 30  
 
 ---
 
 ## Results
 
 ### Dataset Performance
-- Accuracy: ~80%
-- Macro-F1: ~0.79
+- Accuracy: ~80%  
+- Macro-F1: ~0.79  
 
 ### Real-World Performance
-- Accuracy: ~12%
-- Significant drop due to environmental noise and signal distortion
+- Accuracy: ~12%  
+- Significant drop due to environmental noise and signal distortion  
 
 ---
 
 ## Analysis
-- Strong performance in controlled datasets
+- Strong performance in controlled datasets  
 - Real-world performance degrades due to:
-  - Noise and environmental interference
-  - Sensor placement variability
-  - Weak vibration signals
-- Confusion matrix and per-label analysis show class imbalance and misclassification patterns
-- Prediction distribution reveals bias toward dominant classes
+  - Noise and environmental interference  
+  - Sensor placement variability  
+  - Weak vibration signal propagation  
+- Confusion matrix and per-label analysis show class imbalance and misclassification patterns  
+- Prediction distribution reveals bias toward dominant classes  
 
 ---
 
@@ -74,68 +80,38 @@ This raises important **privacy and security concerns in IoT environments**, whe
 
 ---
 
+## Limitations
+- Significant performance drop in real-world conditions  
+- Sensitive to noise and environmental variability  
+- Limited real-world dataset size  
+- Domain mismatch between training and deployment environments  
+
+---
+
 ## Tech Stack
-- Python
-- PyTorch / TensorFlow (use what you used)
-- NumPy / Pandas
-- Matplotlib / Seaborn
-- Raspberry Pi 5
-- ADXL345 Accelerometer
----
-
-## Future Work
-- Improve robustness to noise and environmental variation
-- Expand real-world dataset collection
-- Explore advanced architectures (LSTM, Transformer)
-- Investigate sensor fusion approaches
+- Python  
+- PyTorch  
+- NumPy / Pandas  
+- Matplotlib / Seaborn  
+- Raspberry Pi 5  
+- ADXL345 Accelerometer  
 
 ---
 
-## Project Structure
-
-src/        # Model training and data processing scripts  
-results/    # Evaluation results and visualizations  
-docs/       # Final report and presentation  
-
----
-
-## Key Results
-
-- Dataset Accuracy: ~80%
-- Real-world Accuracy: ~12%
-- Clear performance gap between controlled and real-world environments
-- Confirms feasibility but highlights generalization challenges
-
----
-## Sample Results
-
-### Accuracy per Label
-![Accuracy](results/accuracy_per_label.png)
-
-### Confusion Matrix
-![Confusion Matrix](results/confusion_matrix.png)
-
-### Prediction Distribution
-![Distribution](results/prediction_distribution.png)
-
-### Training vs Validation Accuracy
-![Training](results/training_validation_accuracy.png)
+## Requirements
+- Python 3.9+  
+- PyTorch  
+- NumPy  
+- Pandas  
+- Matplotlib  
+- Seaborn  
 
 ---
 
-## How to Run
+## Quick Start
 
-1. Clone the repository
-2. Install dependencies
-3. Run training script:
-
+```bash
+git clone https://github.com/AsamoahAlbert/motion-keyword-inference-imu.git
+cd motion-keyword-inference-imu
+pip install -r requirements.txt
 python src/train_model.py
-
----
-## Documentation
-
-- 📄 [Final Report](docs/final_report.pdf)
-
----
-## Key Takeaway
-This project demonstrates an end-to-end machine learning pipeline while exposing real-world security risks in IoT systems, combining machine learning, embedded systems, and cybersecurity perspectives.
