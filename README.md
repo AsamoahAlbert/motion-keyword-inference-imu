@@ -76,11 +76,11 @@ This raises important **privacy and security concerns in IoT environments**, whe
 
 ## Tech Stack
 - Python
-- PyTorch
+- PyTorch / TensorFlow (use what you used)
 - NumPy / Pandas
-- Raspberry Pi
+- Matplotlib / Seaborn
+- Raspberry Pi 5
 - ADXL345 Accelerometer
-
 ---
 
 ## Future Work
@@ -91,14 +91,46 @@ This raises important **privacy and security concerns in IoT environments**, whe
 
 ---
 
-## Repository Structure
+## Project Structure
 
+src/        # Model training and data processing scripts  
+results/    # Evaluation results and visualizations  
+docs/       # Final report and presentation  
 
+---
+
+## Key Results
+
+- Dataset Accuracy: ~80%
+- Real-world Accuracy: ~12%
+- Clear performance gap between controlled and real-world environments
+- Confirms feasibility but highlights generalization challenges
+
+---
+## Sample Results
+
+### Accuracy per Label
+![Accuracy](results/accuracy_per_label.png)
+
+### Confusion Matrix
+![Confusion Matrix](results/confusion_matrix.png)
+
+### Prediction Distribution
+![Distribution](results/prediction_distribution.png)
+
+---
+
+## How to Run
+
+1. Clone the repository
+2. Install dependencies
+3. Run training script:
+
+python src/train_model.py
 
 
 
 
 ---
-
 ## Key Takeaway
 This project demonstrates an end-to-end machine learning pipeline while exposing real-world security risks in IoT systems, combining machine learning, embedded systems, and cybersecurity perspectives.
