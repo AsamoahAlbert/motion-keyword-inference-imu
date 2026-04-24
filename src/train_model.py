@@ -1,3 +1,15 @@
+"""
+train_model.py
+
+Trains a 1D CNN model on IMU vibration data for keyword classification.
+
+Steps:
+- Load dataset
+- Preprocess signals
+- Train model
+- Evaluate performance
+"""
+
 import random
 import time
 from datetime import datetime
