@@ -108,6 +108,11 @@ This raises important **privacy and security concerns in IoT environments**, whe
 
 ---
 
+## Demo
+Due to dataset size constraints, raw data is not included.
+The pipeline can be reproduced using the provided scripts.
+
+---
 ## Quick Start
 
 ```bash
