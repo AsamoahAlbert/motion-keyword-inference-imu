@@ -32,7 +32,7 @@ While the approach is feasible under controlled conditions, it highlights **sign
 ---
 
 ## Dataset
-- ~13,000 labeled IMU samples (structured dataset)  
+- 13,000 labeled IMU samples (structured dataset)  
 - 100 real-world samples collected using Raspberry Pi + ADXL345  
 - Sampling rate: 200 Hz  
 - Input format: 3-axis accelerometer data (x, y, z)  
@@ -53,11 +53,11 @@ While the approach is feasible under controlled conditions, it highlights **sign
 ## Results
 
 ### Dataset Performance
-- Accuracy: ~80%  
-- Macro-F1: ~0.79  
+- Accuracy: 80%  
+- Macro-F1: 0.79  
 
 ### Real-World Performance
-- Accuracy: ~12%  
+- Accuracy: 12%  
 - Significant drop due to environmental noise and signal distortion  
 
 ---
